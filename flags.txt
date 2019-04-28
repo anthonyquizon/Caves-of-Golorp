@@ -1,0 +1,48 @@
+flag atoms:
+
+scroll.pl:
+scroll_line
+scroll_name
+max_scroll_line
+
+pmove.pl:
+
+character.pl:
+adjusts_remaining
+rerolls_remaining
+
+screen.pl:
+every Screen atom
+reading_scroll
+level_display
+clear_screen_requested
+requested_cursor_row
+requested_cursor_column
+line0
+line22
+line23
+
+main.pl:
+attributes
+game_over
+
+dungeon.pl:
+dug
+
+messages.pl:
+more_prompt
+unacked_messages
+
+actions.pl:
+turn
+
+monster.pl:
+next_monster
+
+record atoms:
+
+per_turn: list of objects and other things that need per-move actions
+
+1000000+N: attributes for object N
+
+messages: messages still needing to be displayed

@@ -1,0 +1,14 @@
+ Choose a letter to decrease one of 
+ your attributes (%make_di_field(1,adjusts_remaining). % remaining): 
+
+ a. Susceptibility:   %make_di_field(3,susceptibility). %
+ b. Weakness:         %make_di_field(3,weakness). %
+ c. Misfortune:       %make_di_field(3,misfortune). %
+ d. Clumsiness:       %make_di_field(3,clumsiness). %
+ e. Stupidity:        %make_di_field(3,stupidity). %
+ f. Ugliness:         %make_di_field(3,ugliness). %
+
+
+ g. GO with these attributes
+ h. Help on character creation
+ r. Re-roll entirely (%make_di_field(1,rerolls_remaining). % remaining)

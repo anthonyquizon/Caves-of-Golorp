@@ -1,0 +1,91 @@
+*******************************************************************
+*                                              _____              *
+*     ____ _____ ___  __ ____   ______   _____/ ____\             *
+*   _/ ___\\__  \\  \/ // __ \ /  ___/  /  _ \   __\              *
+*   \  \___ / __ \\   /\  ___/ \___ \  (  <_> )  |                *
+*    \___  >____  /\_/  \___  >____  >  \____/|__|                *
+*        \/     \/    .__   \/     \/                             *
+*         ____   ____ |  |   _________________                    *
+*        / ___\ /  _ \|  |  /  _ \_  __ \____ \    __    __   _   *
+*       / /_/  >  <_> )  |_(  <_> )  | \/  |_> >  /  )  /  )  /   *
+*       \___  / \____/|____/\____/|__|  |   __/  /  /  /  /  /    *
+*      /_____/                          |__|    (__/ o(__/ o/     *
+*                                                                 *
+* Caves of Golorp version 0.0.1  Copyright (C) 2004 Matthew Skala *
+* This is free software, distributed under the GNU General Public *
+* License, version 2, which should be included with this software *
+* in the file COPYING.  Press a key to enter the mazes of menace. *
+*******************************************************************
+
+Welcome to Caves of Golorp, to my knowledge the only Prolog Roguelike game
+in existence.  This is an alpha release.
+
+The included binary is for my Linux system; no promises as to whether it'll
+work, be virus-free, etc.  SWI-Prolog supposedly can compile for Windows as
+well; I don't have a Windows system to test CoG on, but would be interested
+to hear reports of whether you can get it to compile and run.  The Unix
+version of SWI-Prolog should be compatible with any reasonably standard
+non-Linux Unixish operating system (BSD, Solaris, whatever) but that also
+hasn't been tested in the case of CoG.  I'd like to remove Linux
+dependencies, so let me know if you find one; removing Unix dependencies
+would be nice but is a lower priority.  Porting to some other Prolog may be
+difficult because of reliance on nonstandard extensions like thread support.
+
+The included Makefile requires SWI-Prolog 5.2, which is under relaxed LGPL
+and is available on the Web.  You don't need that if you're going to run the
+included binary; the binary is all you need to run the game.
+
+Please note that NO VERSION OF SWI-PROLOG PRIOR TO 5.1.13 WILL WORK.  CoG
+requires the multi-threading features of SWI-Prolog, which are default in
+5.2 and not default in earlier versions, but even if you turn thread support
+on, versions prior to 5.1.13 do not save the thread_local directive in
+saved-states, causing CoG to fail when run from a compiled binary.  Don't
+send me "bug" reports from compiling CoG on the wrong Prolog, especially if
+you installed the wrong Prolog from a binary Debian package and nonetheless
+refuse to run *my* binary.
+
+When you run the program, it will dump debugging messages into a file called
+threads.log in the current directory.
+
+You will need an ANSI terminal at least 80x24, preferably with colour.  My
+computer's default terminal emulator works fine except that its cursor is a
+little ugly; the Linux text-mode 80x25 console with t.fnt looks really
+spiffy.
+
+Key commands accepted:
+
+up,down,left,right arrows - move your character.  To attempt to attack a
+    monster, "move" onto it.
+q - quit
+< - climb stairs to previous level
+> - descend stairs to next level
+meta-D - for those who are eager to explore deep levels.  teleports
+         character to the down staircase.
+ctrl-L - redraw screen
+meta-T - show SWI-Prolog's list of current threads (debug info).  This may
+         cause the program to crash, because it eat the thread return values
+         (Prolog's fault, not mine)
+meta-L - dump the current level into the log file threads.log
+
+Character creation: has a help file which you should read.
+
+About the dungeon: A lot of things aren't implemented.  There are monsters
+you can fight, but not many kinds, and you have to use your bare hands.  The
+only monsters you'll actually see are bear cubs and "persons" (human-like
+creatures) because I'm still defining the attributes for the others.  Read
+mtbl.pl for a glimpse of some of my ideas for future monsters.  There are a
+lot of different kinds of levels, but you have to go deep to see them and
+you probably won't survive that long unless you cheat.  Somewhere between
+levels 5 and 14 there is an extra "up" staircase leading into the infinitely
+tall Tower of Golorp, which is worth a visit because it has different
+layouts and different monsters from the main dungeon.
+
+There is some infrastructure in place for magic, special attacks, character
+types other than "person/human", saving and restoring games, and so on.
+
+The game is barely fast enough to be playable on my computer.  I'm working
+on speeding it up a bit.
+
+Matthew Skala
+mskala@ansuz.sooke.bc.ca
+January 4, 2004

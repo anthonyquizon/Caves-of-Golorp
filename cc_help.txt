@@ -1,0 +1,80 @@
+Characters in Caves of Golorp are defined by seven attributes:
+Susceptibility, Weakness, Misfortune, Clumsiness, Stupidity,
+Ugliness, and Hit Points.  You have a limited opportunity to
+customize your character by choosing your attributes at the
+beginning of the game.
+
+By the way, this help screen, like similar screens elsewhere in
+the game, can be scrolled up and down with the up and down
+arrow keys.  You can also use the page up and page down keys to
+scroll a page at a time; spacebar is a synonym for page down. 
+Press Q to exit the help screen.
+
+Now, the seven attributes:
+
+SUSCEPTIBILITY determines how badly you tend to be injured when
+bad things happen to you.  Characters with a higher
+Susceptibility will suffer more Hit Points when hit by the same
+amount of force.  Susceptibility also determines how long it
+takes you to lose Hit Points once you acquire them.
+
+WEAKNESS reduces your effectiveness when you use physical
+force.  For instance, a character with a higher Weakness will
+inflict fewer Hit Points when hitting other characters.
+
+MISFORTUNE makes bad things happen to you in general ways not
+covered by the other attributes.  For instance, someone with a
+lot of Misfortune might tend to lose in games of chance. 
+Misfortune could be seen as a measure of how much the game's
+random number generator hates you.
+
+CLUMSINESS causes your physical actions to miss their mark; for
+instance, with a high Clumsiness you are more likely to fail to
+hit an opponent.  It also represents your ability to be in the
+wrong place at the wrong time when avoiding an opponent's
+attacks, so each attack becomes a contest of your versus your
+opponent's Clumsiness scores.
+
+STUPIDITY describes a character's tendency to do the wrong
+thing through mental failure.  At present, that is almost
+harmless, because Caves of Golorp does not require much mental
+effort on the part of the character, so it's okay to have a
+high Stupidity.  Do you believe that?
+
+UGLINESS repels others from the character cursed with it. 
+Characters of undecided allegiance (not implemented yet) are
+more likely to attack a player with a high Ugliness; prostitutes
+(not implemented yet) will charge the character more; and it's
+generally a bad scene.
+
+HIT POINTS is a special attribute; unlike the others, it
+isn't randomly generated at the start and you don't have the
+chance to customize it.  Everyone's Hit Points work the same
+way: you start with zero, you gain them when you are hit (or
+otherwise injured) and when you have 100, you die.  Hit Points
+will gradually disappear over time, and there may be some
+opportunity to have them removed faster by healing spells or
+similar.
+
+You start with the six randomly-generated attributes selected
+according to a scale that depends on your character's genus and
+species.  At the moment the only choice for a player character
+is "person/human", and such characters start with 8d12+3 for
+each attribute.  (That is, each attribute is the sum of eight
+iid psuedorandom numbers each chosen uniformly from the integers
+1..12, plus the constant 3.) That gives an average value of 52
+for each attribute.  Then you have three chances to choose an
+attribute to reduce, each one reducing the selected attribute
+by 1d6 points.  You also have three chances to start over with
+a new set of random attributes, in which case your number of
+reductions remaining is also reset to three.
+
+Non-player characters or "monsters" have the same seven
+attributes as player characters; they're generated randomly
+within ranges that depend on the character's genus and species. 
+If you play a non-human character (not implemented yet), your
+randomly generated attributes will similarly depend on the type
+of character (instead of being 8d12+3 across the board). 
+Players generally don't have the opportunity to examine a
+monster's attributes directly, although it may be possible to
+infer them from the monster's behaviour, or by magic.
